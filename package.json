@@ -1,0 +1,17 @@
+{
+  "name": "punchin-automation",
+  "version": "1.0.0",
+  "description": "Automate daily attendance punch-in on Neurealm Darwinbox",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "punchin": "npx playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^25.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
