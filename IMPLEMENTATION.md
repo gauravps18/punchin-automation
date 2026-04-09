@@ -105,7 +105,6 @@ punchin-automation/
 ├── package.json
 ├── tsconfig.json
 ├── playwright.config.ts
-├── SPEC.md                 # Feature specification
 ├── IMPLEMENTATION.md       # This file
 ├── auth/
 │   └── session.json        # Saved browser session (git-ignored)

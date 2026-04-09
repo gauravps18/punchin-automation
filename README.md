@@ -56,7 +56,6 @@ punchin-automation/
 ├── .env                    # Credentials (git-ignored)
 ├── .env.example            # Template
 ├── playwright.config.ts    # Playwright configuration
-├── SPEC.md                 # Feature specification
 ├── IMPLEMENTATION.md       # Detailed implementation notes
 ├── auth/
 │   └── session.json        # Saved browser session (git-ignored)
