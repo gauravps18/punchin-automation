@@ -1,6 +1,12 @@
 node_modules/
+logs/
+scripts/
 .env
 auth/
 test-results/
 playwright-report/
 dist/
+
+# Claude
+CLAUDE.md
+.claude/
