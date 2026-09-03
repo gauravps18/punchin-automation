@@ -79,15 +79,18 @@ test('punch in attendance', async ({ page }) => {
   await expect(dialogHeader).toContainText("Let's Get to Work", { timeout: 5_000 });
 
   // Verify dialog content contains today's date in format e.g. "Thu, 09 Apr 2026"
+  // Build the string from parts to match UI ordering/abbreviations exactly.
   const now = new Date();
-  const todayFormatted = now.toLocaleDateString('en-GB', {
+  const parts = new Intl.DateTimeFormat('en-US', {
     timeZone: 'Asia/Kolkata',
     weekday: 'short',
     day: '2-digit',
     month: 'short',
     year: 'numeric',
-  });
-  const contentSlot = page.locator('[slot="content"] .date-wrapper');
+  }).formatToParts(now);
+  const partMap = Object.fromEntries(parts.map((p) => [p.type, p.value]));
+  const todayFormatted = `${partMap.weekday}, ${partMap.day} ${partMap.month} ${partMap.year}`;
+  const contentSlot = page.locator('.content-wrapper[slot="content"] .date-wrapper');
   await expect(contentSlot).toContainText(todayFormatted, { timeout: 5_000 });
 
   // Click the "Clockin" button in the dialog footer (slotted into footer)
